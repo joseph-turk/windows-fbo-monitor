@@ -16,7 +16,7 @@ namespace FBO_Page_Monitor
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Form1());
+      Application.Run(new MainWindow());
     }
   }
 }
