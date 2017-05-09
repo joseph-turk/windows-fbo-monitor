@@ -72,10 +72,10 @@ namespace FBO_Page_Monitor
       if (countOfUpdates > knownUpdatesNumber)
       {
         updateMessage = "There have been updates since you last checked.\r\n\r\n";
-        updateMessage += "here is the last updated in the list:\r\n" + listOfUpdates.Last().InnerText;
+        updateMessage += "Here is the last updated in the list:\r\n" + listOfUpdates.Last().InnerText;
 
         output.Text = updateMessage;
-        //showNotification(updateMessage);
+        showNotification(updateMessage);
       }
       else
       {
@@ -100,6 +100,13 @@ namespace FBO_Page_Monitor
     private void updateCheckTimer_Tick(object sender, EventArgs e)
     {
       checkForUpdates();
+    }
+
+    public void showNotification(string message)
+    {
+      notificationIcon.BalloonTipTitle = rfpNameString + " Updated!";
+      notificationIcon.BalloonTipText = message;
+      notificationIcon.ShowBalloonTip(30000);
     }
   }
 }

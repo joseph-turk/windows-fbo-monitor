@@ -28,6 +28,8 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
       this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
       this.minimizeButton = new System.Windows.Forms.Button();
       this.updatesButton = new System.Windows.Forms.Button();
@@ -39,6 +41,7 @@
       this.urlInput = new System.Windows.Forms.TextBox();
       this.knownUpdatesInput = new System.Windows.Forms.NumericUpDown();
       this.output = new System.Windows.Forms.TextBox();
+      this.notificationIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.tableLayoutPanel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.knownUpdatesInput)).BeginInit();
       this.SuspendLayout();
@@ -179,13 +182,21 @@
       this.output.Size = new System.Drawing.Size(878, 124);
       this.output.TabIndex = 9;
       // 
+      // notificationIcon
+      // 
+      this.notificationIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+      this.notificationIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notificationIcon.Icon")));
+      this.notificationIcon.Visible = true;
+      // 
       // MainWindow
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(884, 261);
       this.Controls.Add(this.tableLayoutPanel1);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "MainWindow";
+      this.ShowIcon = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "FBO Page Monitor";
       this.tableLayoutPanel1.ResumeLayout(false);
@@ -208,6 +219,7 @@
     private System.Windows.Forms.TextBox urlInput;
     private System.Windows.Forms.NumericUpDown knownUpdatesInput;
     private System.Windows.Forms.TextBox output;
+    private System.Windows.Forms.NotifyIcon notificationIcon;
   }
 }
 
