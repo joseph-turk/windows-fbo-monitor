@@ -84,23 +84,27 @@
       // updatesButton
       // 
       this.updatesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.updatesButton.Location = new System.Drawing.Point(673, 235);
+      this.updatesButton.AutoSize = true;
+      this.updatesButton.Location = new System.Drawing.Point(671, 235);
       this.updatesButton.Name = "updatesButton";
-      this.updatesButton.Size = new System.Drawing.Size(75, 23);
+      this.updatesButton.Size = new System.Drawing.Size(77, 23);
       this.updatesButton.TabIndex = 1;
       this.updatesButton.Text = "Get Updates";
       this.updatesButton.UseVisualStyleBackColor = true;
+      this.updatesButton.Click += new System.EventHandler(this.updatesButton_Click);
       // 
       // startMonitoringButton
       // 
       this.startMonitoringButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      this.startMonitoringButton.AutoSize = true;
       this.startMonitoringButton.Enabled = false;
-      this.startMonitoringButton.Location = new System.Drawing.Point(806, 235);
+      this.startMonitoringButton.Location = new System.Drawing.Point(790, 235);
       this.startMonitoringButton.Name = "startMonitoringButton";
-      this.startMonitoringButton.Size = new System.Drawing.Size(75, 23);
+      this.startMonitoringButton.Size = new System.Drawing.Size(91, 23);
       this.startMonitoringButton.TabIndex = 2;
       this.startMonitoringButton.Text = "Start Monitoring";
       this.startMonitoringButton.UseVisualStyleBackColor = true;
+      this.startMonitoringButton.Click += new System.EventHandler(this.startMonitoringButton_Click);
       // 
       // urlLabel
       // 
@@ -154,6 +158,7 @@
       this.urlInput.Name = "urlInput";
       this.urlInput.Size = new System.Drawing.Size(657, 20);
       this.urlInput.TabIndex = 7;
+      this.urlInput.TextChanged += new System.EventHandler(this.urlInput_TextChanged);
       // 
       // knownUpdatesInput
       // 
@@ -161,15 +166,16 @@
       this.knownUpdatesInput.Name = "knownUpdatesInput";
       this.knownUpdatesInput.Size = new System.Drawing.Size(120, 20);
       this.knownUpdatesInput.TabIndex = 8;
+      this.knownUpdatesInput.ValueChanged += new System.EventHandler(this.knownUpdatesInput_ValueChanged);
       // 
       // output
       // 
       this.tableLayoutPanel1.SetColumnSpan(this.output, 3);
       this.output.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.output.Enabled = false;
       this.output.Location = new System.Drawing.Point(3, 81);
       this.output.Multiline = true;
       this.output.Name = "output";
+      this.output.ReadOnly = true;
       this.output.Size = new System.Drawing.Size(878, 124);
       this.output.TabIndex = 9;
       // 
