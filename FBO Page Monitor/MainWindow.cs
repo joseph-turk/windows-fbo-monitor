@@ -71,10 +71,9 @@ namespace FBO_Page_Monitor
 
       if (countOfUpdates > knownUpdatesNumber)
       {
-        updateMessage = "There have been updates since you last checked.\r\n\r\n";
-        updateMessage += "Here is the last updated in the list:\r\n" + listOfUpdates.Last().InnerText;
+        updateMessage += listOfUpdates.Last().InnerText;
 
-        output.Text = updateMessage;
+        output.Text = "There have been updates since you last checked.\r\n\r\nLatest Update:\r\n" + updateMessage;
         showNotification(updateMessage);
       }
       else
@@ -83,7 +82,8 @@ namespace FBO_Page_Monitor
         updateMessage += checkTime.ToShortDateString() + " (" + checkTime.ToShortTimeString() + ")\r\n\r\n";
         updateMessage += "There were no updates since you last checked.";
 
-        output.Text = updateMessage;
+                //output.Text = updateMessage;
+                output.Text = Application.ProductVersion;
       }
 
       InitTimer();
@@ -107,6 +107,17 @@ namespace FBO_Page_Monitor
       notificationIcon.BalloonTipTitle = rfpNameString + " Updated!";
       notificationIcon.BalloonTipText = message;
       notificationIcon.ShowBalloonTip(30000);
+    }
+
+    private void minimizeButton_Click(object sender, EventArgs e)
+    {
+      Hide();
+      notificationIcon.Visible = true;
+    }
+
+    private void notificationIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      Show();
     }
   }
 }
